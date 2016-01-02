@@ -100,10 +100,7 @@
         
         [self animationButtons];
         _isTrigger = YES;
-    }else {
-        [self tapOnBlurView:nil];
     }
-    
 }
 
 - (void)beforeAnimation {

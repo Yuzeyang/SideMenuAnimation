@@ -33,8 +33,9 @@
     [btn setBackgroundColor:[UIColor orangeColor]];
     [btn addTarget:self action:@selector(showSideView:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
-//    self.view.backgroundColor = [UIColor clearColor];
-//    [self.view addSubview:_sideView];
+
+    UIPanGestureRecognizer *panGes = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panShowSideView:)];
+    [self.view addGestureRecognizer:panGes];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -45,6 +46,13 @@
 
 - (IBAction)showSideView:(id)sender {
     [_sideView trigger];
+}
+
+- (void)panShowSideView:(UIPanGestureRecognizer *)panGes {
+    CGPoint translationPoint = [panGes translationInView:self.view];
+    if (translationPoint.x > 0) {
+        [_sideView trigger];
+    }
 }
 
 @end

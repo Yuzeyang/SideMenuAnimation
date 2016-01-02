@@ -1,7 +1,7 @@
 # SideMenuAnimation
 
 ## Introduction
-This is the animation of the side menu popup from the left side of the view.
+This is the animation of the side menu popup from the left side of the view.you can use a button or a pan gesture to show the menu like my demo.
 
 ## How to use
 ```object-c
