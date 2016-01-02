@@ -50,7 +50,8 @@
 
 - (void)panShowSideView:(UIPanGestureRecognizer *)panGes {
     CGPoint translationPoint = [panGes translationInView:self.view];
-    if (translationPoint.x > 0) {
+    CGPoint velocityPoint = [panGes velocityInView:self.view];
+    if (translationPoint.x > 0 && (velocityPoint.x > 500 && fabs(velocityPoint.y) < 600)) {
         [_sideView trigger];
     }
 }
